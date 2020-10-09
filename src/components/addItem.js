@@ -8,7 +8,8 @@ class Add extends React.Component {
     super(props)
     this.state = {
       id: 0,
-      item: "" 
+      item: "",
+      completed: false
     }
   
   }
@@ -26,17 +27,18 @@ class Add extends React.Component {
 
 listId = 0;
 
-// passes items to state in app.js to be rendered as items
+// passes items to state in app.js to be rendered as items and increments listId
 
   submitHandler(e){
     e.preventDefault();
     if (this.state.item === "") {
       return
     }
-    this.props.additem(this.listId,this.state.item);
+    this.props.additem(this.listId,this.state.item, this.state.completed);
     this.setState({
       id: 0,
-      item: "" 
+      item: "",
+      completed: false,
     })
     this.listId ++;
   }

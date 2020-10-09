@@ -20,8 +20,8 @@ class App extends React.Component {
   }
 
 
-  updateList(id, item) {
-    const newItem = {id, item}
+  updateList(id, item, completed) {
+    const newItem = {id, item, completed}
     this.setState((state) => ({
       listItems: state.listItems.concat(newItem)
     }))
@@ -35,7 +35,7 @@ class App extends React.Component {
 
         <h1>Shopping List</h1>
 
-        <AddItem  additem = {(id, item) => this.updateList(id, item)}/>
+        <AddItem  additem = {(id, item, completed) => this.updateList(id, item, completed)}/>
 
         {this.createList()}
 
