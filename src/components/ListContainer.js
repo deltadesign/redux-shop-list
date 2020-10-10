@@ -18,7 +18,11 @@ class ListContainer extends React.Component {
         </thead>
         <tbody>
           {this.props.listItems.map((item,i) => (
-             <ListItem key = {i} id = {item.id} item = {item.item} completed = {item.completed} />
+             <ListItem key = {i} 
+              id = {item.id} 
+              item = {item.item} 
+              completed = {item.completed} 
+              remove = {()=> this.props.removeButton (item.id)}/>
           ))}
         </tbody>
       </Table>

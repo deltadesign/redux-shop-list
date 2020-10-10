@@ -14,18 +14,19 @@ class App extends React.Component {
     };
   }
 
-  // createList() {
-  //   return this.state.listItems.map((item,i) => (
-  //     <ListItem key = {i} id = {item.id} item = {item.item} completed = {item.completed} />
-  //   ) )
-  // }
-
-
+ 
   updateList(id, item, completed) {
     const newItem = {id, item, completed}
     this.setState((state) => ({
       listItems: state.listItems.concat(newItem)
     }))
+  }
+
+  removeHandler(id) {
+    const newState = this.state.listItems.filter((item) => item.id !== id)
+    this.setState({
+      listItems: newState
+    })
   }
 
   render () {
@@ -37,8 +38,8 @@ class App extends React.Component {
         <h1>Shopping List</h1>
 
         <AddItem  additem = {(id, item, completed) => this.updateList(id, item, completed)}/>
-        <ListContainer listItems = {this.state.listItems}/>
-        {/* {this.createList()} */}
+        <ListContainer listItems = {this.state.listItems} removeButton ={(id) => this.removeHandler(id)}/>
+        
       </Container>
     </>
   );

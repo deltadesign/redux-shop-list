@@ -19,7 +19,7 @@ class ListItem extends React.Component {
         </td>
 
         <td>
-        <Button variant="danger">Remove</Button>
+        <Button variant="danger" onClick = {this.props.remove}>Remove</Button>
         </td>
 
       </tr>
