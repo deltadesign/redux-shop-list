@@ -22,7 +22,9 @@ class ListContainer extends React.Component {
               id = {item.id} 
               item = {item.item} 
               completed = {item.completed} 
-              remove = {()=> this.props.removeButton (item.id)}/>
+              remove = {()=> this.props.removeButton (item.id)}
+              mark = {() => this.props.markClick (item.id)}
+              />
           ))}
         </tbody>
       </Table>

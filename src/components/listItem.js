@@ -13,7 +13,7 @@ class ListItem extends React.Component {
         </td>
 
         <td>
-           <span style={{textDecoration: this.props.completed ? 'line-through' : 'none'}}>
+           <span style={{textDecoration: this.props.completed ? 'line-through' : 'none', cursor: 'pointer'}} onClick= {this.props.mark}>
            {this.props.item}
            </span>
         </td>

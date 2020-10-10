@@ -29,6 +29,19 @@ class App extends React.Component {
     })
   }
 
+  toggleCompleted(id) {
+    const newState = this.state.listItems.map((item) => {
+      if(item.id === id) {
+        item.completed = !item.completed
+        return item  
+      } 
+        return item 
+    })
+      this.setState((state) => ({
+        listItems: newState
+      }))
+    }
+
   render () {
   return (
      <> 
@@ -38,7 +51,12 @@ class App extends React.Component {
         <h1>Shopping List</h1>
 
         <AddItem  additem = {(id, item, completed) => this.updateList(id, item, completed)}/>
-        <ListContainer listItems = {this.state.listItems} removeButton ={(id) => this.removeHandler(id)}/>
+
+        <ListContainer 
+          listItems = {this.state.listItems} 
+          removeButton ={(id) => this.removeHandler(id)} 
+          markClick = {(id) => this.toggleCompleted(id)}
+        />
         
       </Container>
     </>
