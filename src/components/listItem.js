@@ -8,12 +8,14 @@ class ListItem extends React.Component {
     
       <tr> 
 
-        <td>
-        {this.props.id}
+        <td>  
+            {this.props.id}
         </td>
 
         <td>
-        {this.props.item}
+           <span style={{textDecoration: this.props.completed ? 'line-through' : 'none'}}>
+           {this.props.item}
+           </span>
         </td>
 
         <td>

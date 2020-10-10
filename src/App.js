@@ -2,7 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import AddItem from './components/addItem';
-import ListItem from './components/listItem';
+// import ListItem from './components/listItem';
+import ListContainer from './components/ListContainer';
 
 
 class App extends React.Component {
@@ -13,11 +14,11 @@ class App extends React.Component {
     };
   }
 
-  createList() {
-    return this.state.listItems.map((item,i) => (
-      <ListItem key = {i} id = {item.id} item = {item.item} />
-    ) )
-  }
+  // createList() {
+  //   return this.state.listItems.map((item,i) => (
+  //     <ListItem key = {i} id = {item.id} item = {item.item} completed = {item.completed} />
+  //   ) )
+  // }
 
 
   updateList(id, item, completed) {
@@ -36,9 +37,8 @@ class App extends React.Component {
         <h1>Shopping List</h1>
 
         <AddItem  additem = {(id, item, completed) => this.updateList(id, item, completed)}/>
-
-        {this.createList()}
-
+        <ListContainer listItems = {this.state.listItems}/>
+        {/* {this.createList()} */}
       </Container>
     </>
   );
