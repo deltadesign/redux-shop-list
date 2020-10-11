@@ -8,7 +8,7 @@ class ListContainer extends React.Component {
 
   render() {
     return (
-      <Table>
+      <Table striped>
         <thead>
           <tr>
             <th>ID</th>

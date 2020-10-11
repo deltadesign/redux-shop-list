@@ -46,7 +46,7 @@ listId = 0;
   render () {
   return (
     
-      <Card>
+      <Card className="mb-5">
         <Card.Body>
 
           <Form onSubmit = {(e) => {this.submitHandler(e)}}>
@@ -58,7 +58,7 @@ listId = 0;
             onChange = { (e) => this.changeHandler(e) }>
           </input>
 
-          <Button variant = "warning" type = "submit">Add</Button>
+          <Button variant = "warning" type = "submit" className = "ml-2" >Add</Button>
 
           </Form>
 

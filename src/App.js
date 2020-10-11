@@ -5,6 +5,8 @@ import AddItem from './components/addItem';
 import ListContainer from './components/ListContainer';
 import NavLink from './components/navLinks'
 
+// import './App.css';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -69,7 +71,7 @@ class App extends React.Component {
   return (
      <> 
       <Container>
-        <pre>{JSON.stringify(this.state)}</pre>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
 
         <h1>Shopping List</h1>
 
