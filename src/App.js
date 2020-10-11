@@ -47,6 +47,22 @@ class App extends React.Component {
 
     linkClick (filter) {
       console.log(filter)
+      const items = JSON.parse(localStorage.getItem("list"));
+      let newState = [];
+
+      switch(filter) {
+        case "Purchased" :
+          newState = items.filter((item) => item.completed === true)
+          this.setState({listItems: newState})
+        break;
+        case "Outstanding" :
+          newState = items.filter((item) => item.completed !== true)
+          this.setState({listItems: newState})
+        break;
+        default: 
+          this.setState({listItems: items})
+        break;
+      }
     }
 
   render () {
