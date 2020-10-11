@@ -11,9 +11,9 @@ class NavLink extends React.Component {
     return (
 
   <Nav variant = "tabs" defaultActiveKey = "All">
-    <Link filter = "All" />
-    <Link filter = "Outstanding" />
-    <Link filter = "Purchased" />
+    <Link filter = "All" linkClick = { (filter) => this.props.linkClick(filter) }/>
+    <Link filter = "Outstanding" linkClick = { (filter) => this.props.linkClick(filter) } />
+    <Link filter = "Purchased" linkClick = { (filter) => this.props.linkClick(filter) } />
   </Nav>
 
     );

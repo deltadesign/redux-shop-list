@@ -10,7 +10,9 @@ class Link extends React.Component {
     return (
       <>
         <Nav.Item>
-          <Nav.Link eventKey = {this.props.filter} >{this.props.filter}</Nav.Link>
+          <Nav.Link eventKey = {this.props.filter} onClick = { () => this.props.linkClick(this.props.filter) }>
+              {this.props.filter}
+          </Nav.Link>
         </Nav.Item>
       </>
     );

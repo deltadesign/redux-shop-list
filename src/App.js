@@ -14,19 +14,24 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const listItems = localStorage.getItem("list");
+    this.setState(
+      { listItems: JSON.parse(listItems) || [] }
+    )
+  }
+
  
   updateList(id, item, completed) {
     const newItem = {id, item, completed}
     this.setState((state) => ({
       listItems: state.listItems.concat(newItem)
-    }))
+    }), () => localStorage.setItem('list', JSON.stringify(this.state.listItems)))
   }
 
   removeHandler(id) {
     const newState = this.state.listItems.filter((item) => item.id !== id)
-    this.setState({
-      listItems: newState
-    })
+    this.setState({ listItems: newState } , () => localStorage.setItem('list', JSON.stringify(this.state.listItems)))
   }
 
   toggleCompleted(id) {
@@ -37,9 +42,11 @@ class App extends React.Component {
       } 
         return item 
     })
-      this.setState((state) => ({
-        listItems: newState
-      }))
+      this.setState((state) => ({ listItems: newState }), () => localStorage.setItem('list', JSON.stringify(this.state.listItems)))
+    }
+
+    linkClick (filter) {
+      console.log(filter)
     }
 
   render () {
@@ -52,7 +59,7 @@ class App extends React.Component {
 
         <AddItem  additem = {(id, item, completed) => this.updateList(id, item, completed)}/>
 
-        <NavLink />
+        <NavLink linkClick = { (filter) => this.linkClick(filter) } />
 
         <ListContainer 
           listItems = {this.state.listItems} 
