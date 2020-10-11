@@ -2,8 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import AddItem from './components/addItem';
-// import ListItem from './components/listItem';
 import ListContainer from './components/ListContainer';
+import NavLink from './components/navLinks'
 
 
 class App extends React.Component {
@@ -51,6 +51,8 @@ class App extends React.Component {
         <h1>Shopping List</h1>
 
         <AddItem  additem = {(id, item, completed) => this.updateList(id, item, completed)}/>
+
+        <NavLink />
 
         <ListContainer 
           listItems = {this.state.listItems} 
