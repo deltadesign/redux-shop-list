@@ -14,6 +14,13 @@ class Add extends React.Component {
   
   }
 
+componentDidMount() {
+  const ids = Number(localStorage.getItem("ids"));
+  this.setState ({
+    id: ids
+  })
+}
+
 
 //Overwrites state when an item is entered
 
@@ -23,24 +30,22 @@ class Add extends React.Component {
     this.setState(newState)
   }
 
-// creates an id for each item
-
-listId = 0;
 
 // passes items to state in app.js to be rendered as items and increments listId
 
   submitHandler(e){
     e.preventDefault();
+    let itemId = this.state.id +1
     if (this.state.item === "") {
       return
     }
-    this.props.additem(this.listId,this.state.item, this.state.completed);
+    this.props.additem(this.state.id,this.state.item, this.state.completed);
     this.setState({
-      id: 0,
+      id: itemId,
       item: "",
       completed: false,
-    })
-    this.listId ++;
+    },() => localStorage.setItem('ids', JSON.stringify(this.state.id)))
+  
   }
 
   render () {
