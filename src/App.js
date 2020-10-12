@@ -71,7 +71,7 @@ class App extends React.Component {
   return (
      <> 
       <Container>
-        <pre>{JSON.stringify(this.state)}</pre>
+        {/* <pre>{JSON.stringify(this.state)}</pre> */}
 
         <h1>Shopping List</h1>
 
