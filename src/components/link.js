@@ -2,16 +2,14 @@ import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 
 
-
-
 class Link extends React.Component {
 
   render () {
     return (
       <>
         <Nav.Item>
-          <Nav.Link eventKey = {this.props.filter} onClick = { () => this.props.linkClick(this.props.filter) }>
-              {this.props.filter}
+          <Nav.Link eventKey = {this.props.children} onClick = {this.props.onClick} disabled = {this.props.active}>
+              {this.props.children}
           </Nav.Link>
         </Nav.Item>
       </>

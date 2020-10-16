@@ -5,7 +5,6 @@ import ListItem from './listItem';
 
 class ListContainer extends React.Component {
 
-
   render() {
     return (
       <Table striped>
@@ -17,13 +16,13 @@ class ListContainer extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.listItems.map((item,i) => (
-             <ListItem key = {i} 
+          {this.props.listItems.map((item) => (
+             <ListItem key = {item.id} 
               id = {item.id} 
               item = {item.item} 
               completed = {item.completed} 
-              remove = {()=> this.props.removeButton (item.id)}
-              mark = {() => this.props.markClick (item.id)}
+              remove = {()=> this.props.remove(item.id)}
+              mark = {() => this.props.mark(item.id)}
               />
           ))}
         </tbody>
