@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { toggleComplete, removeItem} from '../actions';
+import { toggleComplete } from '../actions';
+import {removeItem } from '../actions';
 import ListContainer from './ListContainer';
 
 function getVisibleItems (items, filter) {

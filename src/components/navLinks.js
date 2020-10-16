@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
-import Link from './link';
+import LinkContainer from './LinkContainer';
 import { VisibilityFilters } from '../actions';
 
 class NavLinks extends React.Component {
@@ -9,9 +9,9 @@ class NavLinks extends React.Component {
     return (
 
     <Nav variant = "tabs" defaultActiveKey = "All">
-          <Link filter={VisibilityFilters.SHOW_ALL}>All</Link>
-          <Link filter={VisibilityFilters.SHOW_ACTIVE}>Outstanding</Link>
-          <Link filter={VisibilityFilters.SHOW_COMPLETED}>Completed</Link>
+          <LinkContainer filter={VisibilityFilters.SHOW_ALL}>All</LinkContainer>
+          <LinkContainer filter={VisibilityFilters.SHOW_ACTIVE}>Outstanding</LinkContainer>
+          <LinkContainer filter={VisibilityFilters.SHOW_COMPLETED}>Completed</LinkContainer>
     </Nav>
 
     );
