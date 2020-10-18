@@ -12,6 +12,7 @@ function getVisibleItems (items, filter) {
     case 'SHOW_ALL':
     default: 
       console.log(items)
+      // localStorage.setItem("listItems", JSON.stringify(items)) // need to think about local storage
       return items
   }
 }

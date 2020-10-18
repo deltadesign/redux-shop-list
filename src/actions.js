@@ -11,6 +11,8 @@ export const VisibilityFilters = {
 
 let nextId = 0;
 
+
+
 export function addItem(text) {
   return {
     type: ADD_ITEM,
